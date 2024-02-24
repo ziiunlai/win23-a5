@@ -29,3 +29,18 @@ if $CALCULATOR 3 @ 2; then  # If the return code of $PROGRAM is zero (i.e. succe
   echo 'ERROR! An invalid run of the application (3 @ 2) apparently succeeded?!'
   exit 1
 fi
+
+# Test 04: Adding another test for correct output with negative numbers
+if [[ $($CALCULATOR 1 - 2) -ne -1 ]]; then # if 1 - 2 is not negative 1
+  echo 'ERROR! Valid run of calculator (1 - 2) failed to produce -1 as result.'
+  exit 1
+fi 
+
+# Test 05: Another test to check decimal points?
+if [[ $($CALCULATOR 1.0 - 1.0) -ne 0 ]]; then # if decimal operations aren't correct
+  echo 'ERROR! Valid decimal operation (1.0 - 1.0) failed to produce 0.'
+  exit 1
+fi
+
+# Test 06: This is just to see what github looks like if CI tests fail
+exit 1
