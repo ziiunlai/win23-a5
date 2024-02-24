@@ -43,4 +43,4 @@ if [[ $($CALCULATOR 1.0 - 1.0) -ne 0 ]]; then # if decimal operations aren't cor
 fi
 
 # Test 06: This is just to see what github looks like if CI tests fail
-exit 1
+# exit 1
